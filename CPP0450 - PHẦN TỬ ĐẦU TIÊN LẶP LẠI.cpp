@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+
+int main(){
+    int t; cin >> t;
+    while(t--){
+        int n; cin >> n;
+        int a[n];
+        for(int i = 0; i < n; i++){
+            cin >> a[i];
+        }
+        int check = 0;
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < i; j++){
+                if(a[i] == a[j]){
+                    check = 1;
+                    break;
+                }
+            }
+            if(check == 1){
+                cout << a[i] << endl;
+                break;
+            }
+        }
+        if(check == 0) cout << "-1\n";
+    }
+    return 0;
+}
